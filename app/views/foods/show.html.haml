@@ -1,0 +1,21 @@
+%h2 Details about #{@food.food_name}
+
+%ul#details
+  %li
+    Expires on:
+    = @food.expires_on
+  %li
+    Acquired on:
+    = @food.acquired_on
+  %li
+    Qty:
+    = @food.qty
+  %li
+    Brand:
+    = @food.brand
+  %li
+    Price:
+    = @food.price
+
+=  link_to 'Back to Food list', foods_path
+    

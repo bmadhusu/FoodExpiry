@@ -1,0 +1,22 @@
+%h2 All Foods
+
+%table#foods
+  %thead
+    %tr
+      %th Food Name
+      %th Belongs To
+      %th Expires On
+      %th Quantity
+      %th Acquired On
+      %th Price
+      %th More Info
+  %tbody
+    - @foods.each do |food|
+      %tr
+        %td= food.food_name
+        %td= food.user_name_id
+        %td= food.expires_on
+        %td= food.qty
+        %td= food.acquired_on
+        %td= food.price
+        %td= link_to "More about #{food.food_name}", food_path(food)

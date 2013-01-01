@@ -1,0 +1,12 @@
+class FoodsController < ApplicationController
+  def index
+    @foods = Food.all
+  end
+
+
+  def show
+    id = params[:id]
+    @food = Food.find(id)
+  end
+
+end
