@@ -12,6 +12,7 @@ class CreateFoods < ActiveRecord::Migration
       t.float :price
 
       t.timestamps
+      end   
   end
 
   def down

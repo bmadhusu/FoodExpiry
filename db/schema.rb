@@ -16,12 +16,12 @@ ActiveRecord::Schema.define(:version => 20121231192436) do
   create_table "foods", :force => true do |t|
     t.integer  "user_name_id"
     t.string   "food_name"
-    t.datetime "expires_on"
+    t.date     "expires_on"
     t.string   "alt_name"
     t.integer  "qty"
     t.string   "brand"
     t.string   "unit"
-    t.datetime "acquired_on"
+    t.date     "acquired_on"
     t.float    "price"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
