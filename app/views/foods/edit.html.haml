@@ -1,6 +1,6 @@
-%h2 Create New Food
+%h2 Edit Food
 
-= form_tag foods_path, :method => :post do
+= form_tag food_path(@food), :method => :put do
 
   = label :food, :food_name, 'Name of Food'
   = text_field :food, :food_name

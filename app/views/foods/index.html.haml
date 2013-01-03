@@ -3,12 +3,13 @@
 %table#foods
   %thead
     %tr
-      %th Food Name
+      %th Item
       %th Belongs To
-      %th Acquired On
-      %th Expires On
+      %th Acquired
+      %th Expires
       %th Quantity
       %th Price
+      %th Type
       %th More Info
   %tbody
     - @foods.each do |food|
@@ -19,6 +20,7 @@
         %td= food.expires_on
         %td= food.qty
         %td= food.price
+        %td= food.food_type
         %td= link_to "More about #{food.food_name}", food_path(food)
 
 = link_to 'Add new food', new_food_path

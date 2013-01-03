@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(:version => 20121231192436) do
     t.string   "unit"
     t.date     "acquired_on"
     t.float    "price"
+    t.string   "food_type"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end

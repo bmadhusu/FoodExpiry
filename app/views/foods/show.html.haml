@@ -16,6 +16,11 @@
   %li
     Price:
     = @food.price
+  %li
+    Type:
+    = @food.food_type
 
+=  link_to 'Edit info', edit_food_path(@food)
+=  button_to 'Delete', food_path(@food), :method => :delete, :confirm => 'Are you sure?'
 =  link_to 'Back to Food list', foods_path
     

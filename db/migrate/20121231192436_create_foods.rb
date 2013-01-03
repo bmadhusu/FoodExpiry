@@ -10,6 +10,7 @@ class CreateFoods < ActiveRecord::Migration
       t.string :unit
       t.date 'acquired_on'
       t.float :price
+      t.string :food_type
 
       t.timestamps
       end   
