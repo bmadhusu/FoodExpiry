@@ -41,7 +41,7 @@ h1 {
   width: 100%;
   border-bottom: 1px solid DarkSlateGrey;
 }
-h1.title {
+h2.title {
   margin: 0 0 1em;
   padding: 10px;
   background-color: orange;
@@ -65,10 +65,22 @@ table#foods th, table#foods td {
   padding: 4px;
   text-align: left;
 }
-#notice, #warning {
+#notice {
   background: rosybrown;
   margin: 1em 0;
   padding: 4px;
+}
+#warning {
+  color: red;
+  padding: 0.5em;
+  font-weight: bold;
+  border: 2px solid red;
+}
+
+div.field_with_errors input {
+    border: 1px solid red;
+    background-color: yellow;
+    font-weight: bold;
 }
 form label {
   display: block;
@@ -76,3 +88,5 @@ form label {
   font-weight: bold;
   color: maroon;
 }
+
+.hilite { background-color: yellow; }

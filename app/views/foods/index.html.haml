@@ -1,26 +1,31 @@
-%h2 Your Food List
+%h1 Your Food List
+
+%br
+Price Tally:
+= label :price, :tally, "#{number_to_currency(@price_tally)}", :id => 'price_tally'
+
+%br
+You've lost this much in expired foods!! =>
+= label :price, :expiry_tally, "#{number_to_currency(@expired_price_tally)}", :id => 'expired_price_tally'
 
 %table#foods
   %thead
     %tr
+      %th Select
       %th Item
-      %th Belongs To
-      %th Acquired
       %th Expires
-      %th Quantity
+      %th Purchased
       %th Price
       %th Type
       %th More Info
   %tbody
-    - @foods.each do |food|
-      %tr
-        %td= food.food_name
-        %td= food.user_name_id
-        %td= food.acquired_on
-        %td= food.expires_on
-        %td= food.qty
-        %td= food.price
-        %td= food.food_type
-        %td= link_to "More about #{food.food_name}", food_path(food)
+    = render :partial => 'food', :collection => @foods
+
 
 = link_to 'Add new food', new_food_path
+%br
+= link_to 'Export Fridge to CSV', foods_path(format: "csv")
+%br
+= link_to 'Clean out Fridge and Import Fresh Foods', :action => 'import_fresh_foods'
+
+
