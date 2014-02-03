@@ -16,9 +16,13 @@ class FoodsController < ApplicationController
     # delete all foods in fridge first
     # perhaps better to offer a separate clean fridge option
 
-    csv_text = File.read('...')
-    csv = CSV.parse(csv_text, :headers => true)
+    uploaded = params[:file]
+
+    print "spitting out csv"
+
+    csv = CSV.parse(uploaded.read, :headers => true)
     csv.each do |row|
+      print row
       Food.create!(row.to_hash)
     end
 

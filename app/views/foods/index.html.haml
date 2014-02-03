@@ -28,4 +28,11 @@ You've lost this much in expired foods!! =>
 %br
 = link_to 'Clean out Fridge and Import Fresh Foods', :action => 'import_fresh_foods'
 
+= form_tag({ :action=> "import_fresh_foods"}, {:multipart=>true}) do
+  = file_field_tag :file
+  = submit_tag "Import"
+
+
+
+
 
