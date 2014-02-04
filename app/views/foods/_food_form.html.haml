@@ -1,0 +1,30 @@
+- unless food.errors.empty?
+  #warning
+    Errors prevented this food from being #{controller.action_name}d:
+    %ul
+      - food.errors.full_messages.each do |error|
+        %li= error
+
+= label :food, :food_name, 'Name of Food'
+= text_field :food, :food_name
+
+= label :food, :expires_on, 'Expires On'
+= date_select :food, :expires_on
+
+= label :food, :acquired_on, 'Acquired On'
+= date_select :food, :acquired_on
+
+= label :food, :price, 'Price'
+= text_field :food, :price
+
+= label :food, :qty, 'Qty'
+= text_field :food, :qty
+
+= label :food, :unit, 'Unit'
+= text_field :food, :unit
+
+= label :food, :brand, 'Brand'
+= text_field :food, :brand
+
+= label :food, :food_type, 'Type'
+= select :food, :food_type, ['Dairy', 'Meat, Fish, Beans, Eggs', 'Grains, bread, rice, pasta', 'Fats, Oils, Sweets', 'Vegetables, Fruits', 'Leftovers', 'Misc']
