@@ -16,15 +16,41 @@ class FoodsController < ApplicationController
     # delete all foods in fridge first
     # perhaps better to offer a separate clean fridge option
 
-    uploaded = params[:file]
+    # check if we should delete existing foods
+    
+    print params
+    if params[:delete_foods]
+      # delete all existing foods in table
+      Food.destroy_all
+    end
 
-    print "spitting out csv"
+    uploaded = params[:file]
 
     csv = CSV.parse(uploaded.read, :headers => true)
     csv.each do |row|
-      print row
       Food.create!(row.to_hash)
     end
+
+    redirect_to foods_path
+
+  end
+
+  def destroy_multiple
+
+    print params
+    Food.destroy(params[:foods])
+
+    respond_to do |format|
+      format.html { redirect_to foods_path }
+      format.json { head :no_content}
+    end
+
+  end
+
+  def delete
+    print params
+
+    redirect_to foods_path
 
   end
 

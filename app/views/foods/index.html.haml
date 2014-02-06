@@ -8,27 +8,35 @@ Price Tally:
 You've lost this much in expired foods!! =>
 = label :price, :expiry_tally, "#{number_to_currency(@expired_price_tally)}", :id => 'expired_price_tally'
 
-%table#foods
-  %thead
-    %tr
-      %th Select
-      %th Item
-      %th Expires
-      %th Purchased
-      %th Price
-      %th Type
-      %th More Info
-  %tbody
-    = render :partial => 'food', :collection => @foods
+= form_tag destroy_multiple_foods_path, method: :delete do
+  %table#foods
+    %thead
+      %tr
+        %th Select
+        %th Item
+        %th Expires
+        %th Purchased
+        %th Price
+        %th Type
+        %th More Info
+    %tbody
+      = render :partial => 'food', :collection => @foods
 
+  = submit_tag "Delete selected"
 
+%br
 = link_to 'Add new food', new_food_path
 %br
 = link_to 'Export Fridge to CSV', foods_path(format: "csv")
 %br
-= link_to 'Clean out Fridge and Import Fresh Foods', :action => 'import_fresh_foods'
+= label_tag  'Import Fresh Foods:'
+-#, :action => 'import_fresh_foods'
+
 
 = form_tag({ :action=> "import_fresh_foods"}, {:multipart=>true}) do
+  = check_box_tag 'delete_foods'
+  Delete existing foods when importing new
+  %br
   = file_field_tag :file
   = submit_tag "Import"
 

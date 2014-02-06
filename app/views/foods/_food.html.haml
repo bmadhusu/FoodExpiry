@@ -1,5 +1,5 @@
 %tr{class:food.expires_on < Date.today && 'hilite'}
-  %td= check_box_tag "cb1"  <= need to edit the nth child stuff in js file
+  %td= check_box_tag "foods[]", food.id # <= need to edit the nth child stuff in js file
   %td= food.food_name
   %td= food.expires_on.strftime("%b %d, %Y")
   %td= food.acquired_on.strftime("%b %d, %Y")
