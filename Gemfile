@@ -43,7 +43,7 @@ end
 # To use debugger
 gem 'debugger'
 
-gem 'rufus-scheduler', :require => "rufus/scheduler"
+gem 'rufus-scheduler', '2.0.24', :require => "rufus/scheduler"
 
 # use Haml for templates
 
