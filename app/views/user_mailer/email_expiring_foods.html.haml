@@ -1,0 +1,58 @@
+%html
+  %head
+  %body
+    %h1 Hello Madhu! This is your kitchen/pantry calling!
+    %br
+    %h2 These foods have EXPIRED. Discard them!
+
+    %table
+      %tr
+        %th Item
+        %th Expired
+        %th Price
+      %tbody
+      -@expired_foods.each do |food|
+        %tr
+          %td= food.food_name
+          %td= food.expires_on.strftime("%b %d %Y")
+          %td= food.price
+
+    %h2 The cost of the expired foods was: #{number_to_currency(@expired_foods.sum('price'))}
+    %br
+    %h2 These foods are expiring in the next one week:
+
+    %table
+      %tr
+        %th Item
+        %th Expires
+        %th Price
+      %tbody
+      -@one_week_foods.each do |food|
+        %tr
+          %td= food.food_name
+          %td= food.expires_on.strftime("%b %d %Y")
+          %td= food.price
+
+    %h2 AT RISK of losing: #{number_to_currency(@one_week_foods.sum('price'))}
+    %br
+
+    %p
+      These foods are expiring the week after next:
+
+    %table
+      %tr
+        %th Item
+        %th Expires
+        %th Price
+      %tbody
+      -@two_week_foods.each do |food|
+        %tr
+          %td= food.food_name
+          %td= food.expires_on.strftime("%b %d %Y")
+          %td= food.price
+
+    %h2 AT RISK of losing: #{number_to_currency(@two_week_foods.sum('price'))}
+    
+    %p
+%h4 Hope you make something scrumptious!
+

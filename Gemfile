@@ -35,12 +35,14 @@ gem 'jquery-rails'
 # gem 'capistrano'
 
 # To use debugger
-# gem 'debugger'
+gem 'debugger'
+
+gem 'rufus-scheduler', :require => "rufus/scheduler"
 
 # use Haml for templates
 
 gem 'haml'
 # use ruby debugger
-group :development, :test do
-  gem 'ruby-debug19'
-end
+#group :development, :test do
+#  gem 'ruby-debug19', :require => 'ruby-debug'
+#end
