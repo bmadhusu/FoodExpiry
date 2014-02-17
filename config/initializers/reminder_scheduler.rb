@@ -4,7 +4,7 @@ scheduler = Rufus::Scheduler.new
 scheduler.every '2m' do
   puts "AWESOME!!!"
 
-  UserMailer.email_expiring_foods.deliver
+ # UserMailer.email_expiring_foods.deliver
 
 end
 
