@@ -1,6 +1,10 @@
 FoodExpiry::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
+  # New as per Rails 4.0
+  config.eager_load = true
+  config.assets.js_compressor = :uglifier
+
   # Code is not reloaded between requests
   config.cache_classes = true
 

@@ -11,8 +11,14 @@ FoodExpiry::Application.configure do
   config.serve_static_assets = true
   config.static_cache_control = "public, max-age=3600"
 
+  config.eager_load = false # New per Rails 4.0
+
+  # Deprecated as per Rails 4.0
   # Log error messages when you accidentally call methods on nil
-  config.whiny_nils = true
+  # config.whiny_nils = true
+
+  # Raise exception on mass assignment protection for Active Record models
+  # config.active_record.mass_assignment_sanitizer = :strict
 
   # Show full error reports and disable caching
   config.consider_all_requests_local       = true
@@ -29,8 +35,6 @@ FoodExpiry::Application.configure do
   # ActionMailer::Base.deliveries array.
   config.action_mailer.delivery_method = :test
 
-  # Raise exception on mass assignment protection for Active Record models
-  config.active_record.mass_assignment_sanitizer = :strict
 
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr

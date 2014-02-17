@@ -7,7 +7,11 @@ FoodExpiry::Application.configure do
   config.cache_classes = false
 
   # Log error messages when you accidentally call methods on nil.
-  config.whiny_nils = true
+  # config.whiny_nils = true ; deprecated in Rails 4
+
+  # should have eager_load set to false in dev as per Rails 4.0
+  config.eager_load = false
+
 
   # Show full error reports and disable caching
   config.consider_all_requests_local       = true
@@ -31,18 +35,19 @@ config.action_mailer.smtp_settings = {
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
 
+   # Below are deprecated as per Rails 4.0
   # Only use best-standards-support built into browsers
-  config.action_dispatch.best_standards_support = :builtin
+  # config.action_dispatch.best_standards_support = :builtin
 
   # Raise exception on mass assignment protection for Active Record models
-  config.active_record.mass_assignment_sanitizer = :strict
+  # config.active_record.mass_assignment_sanitizer = :strict
 
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
-  config.active_record.auto_explain_threshold_in_seconds = 0.5
+  # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
   # Do not compress assets
-  config.assets.compress = false
+  # config.assets.compress = false
 
   # Expands the lines which load the assets
   config.assets.debug = true

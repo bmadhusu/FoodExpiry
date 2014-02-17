@@ -21,11 +21,11 @@ def secure_token
 end
 
 #below line from Hartl tutorial
-#FoodExpiry::Application.config.secret_key_base = secure_token
+FoodExpiry::Application.config.secret_key_base = secure_token
 
 # below line is original that was working
 #FoodExpiry::Application.config.secret_token = '446feb779177c82c258c43bf2166047dbb80d3cfaece4c0ae76cea88b5f697d34e9a4bef0e0c853d1f5fc6669ee40b8f2bcc791993d665f496d2c91019523dd1'
 
-FoodExpiry::Application.config.secret_token = secure_token
+#FoodExpiry::Application.config.secret_token = secure_token
 #'446feb779177c82c258c43bf2166047dbb80d3cfaece4c0ae76cea88b5f697d34e9a4bef0e0c853d1f5fc6669ee40b8f2bcc791993d665f496d2c91019523dd1'secret_token
 
