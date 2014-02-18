@@ -59,8 +59,11 @@ module FoodExpiry
     # in your app. As such, your models will need to explicitly whitelist or blacklist accessible
     # parameters by using an attr_accessible or attr_protected declaration.
 #    config.active_record.whitelist_attributes = true
-# Madhu setting to false for convenience
-  #  config.active_record.whitelist_attributes = false
+
+# Even though Rails 4.0 says we can get rid of whitelist, I am attr_accessible under the protected_attributes gem
+# so I still need to set this to false
+
+   config.active_record.whitelist_attributes = false
 
     # Enable the asset pipeline
    # config.assets.enabled = true

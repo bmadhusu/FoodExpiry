@@ -7,7 +7,6 @@ class Food < ActiveRecord::Base
 
   def expiry_is_after_purchase
     errors.add(:expires_on, 'must be >= purchase date') if self.expires_on < self.acquired_on
-
   end
 
   def self.to_csv

@@ -5,8 +5,7 @@ gem 'rails', '4.0.2'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-# for now use protected attributes gem rather than strong just to keep working
-gem 'protected_attributes'
+
 
 group :development, :test do
 	gem 'sqlite3', '1.3.8'
@@ -57,6 +56,9 @@ end
 gem 'debugger'
 
 gem 'rufus-scheduler', '2.0.24', :require => "rufus/scheduler"
+
+# for now use protected attributes gem rather than strong just to keep working
+gem 'protected_attributes', '1.0.5'
 
 # use Haml for templates
 
