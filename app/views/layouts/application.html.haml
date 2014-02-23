@@ -1,17 +1,30 @@
 !!! 5
 %html
   %head
-    %title Eat Me NOW!
+    %title Eat Me NOW! | #{yield(:title)}
     = stylesheet_link_tag 'application'
     = javascript_include_tag 'application'
     = csrf_meta_tags
 
 
   %body
+    %header.navbar.navbar-fixed-top.navbar-inverse
+      .navbar-inner
+        .container
+          = link_to "Food App", '#'
+          %nav
+            %ul.nav.pull-right
+              %li
+                = link_to "Home", '#'
+              %li
+                = link_to "Help", '#'
+              %li
+                = link_to "Sign in", '#'
     %h2.title Eat Me NOW!
     #main
       - if flash[:notice]
         #notice.message= flash[:notice]
       - elsif flash[:warning]
         #warning.message= flash[:warning]
-      = yield
+      .container
+        = yield

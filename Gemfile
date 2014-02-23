@@ -64,6 +64,7 @@ gem 'protected_attributes', '1.0.5'
 # use Haml for templates
 
 gem 'haml'
+gem 'haml-rails'
 # use ruby debugger
 #group :development, :test do
 #  gem 'ruby-debug19', :require => 'ruby-debug'
