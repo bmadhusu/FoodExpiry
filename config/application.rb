@@ -74,5 +74,8 @@ module FoodExpiry
     # Should explicitly set this as per Rails 4.0
     config.i18n.enforce_available_locales = true    
 
+    # below line is for bootstrap-sass compatible with asset pipeline; from Rails Tutorial Hartl
+    config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
+
   end
 end
