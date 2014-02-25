@@ -15,6 +15,7 @@ group :development, :test do
 	gem 'spork-rails', '4.0.0'
 	gem 'guard-spork', '1.5.0'
 	gem 'childprocess', '0.3.6'
+	gem 'debugger'
 end
 
 gem 'pg', '0.15.1'
@@ -55,7 +56,7 @@ end
 # gem 'capistrano'
 
 # To use debugger
-gem 'debugger'
+
 
 gem 'rufus-scheduler', '2.0.24', :require => "rufus/scheduler"
 
