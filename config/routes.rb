@@ -1,9 +1,11 @@
 FoodExpiry::Application.routes.draw do
 
-  get "static_pages/home"
-  get "static_pages/help"
-  get "static_pages/about"
-  get "static_pages/contact"
+  get "users/new"
+  root 'static_pages#home'
+  match '/signup',    to:'users#new',   via:'get'
+  match '/help',    to:'static_pages#help',   via:'get'
+  match '/about',    to:'static_pages#about',   via:'get'
+  match '/contact',    to:'static_pages#contact',   via:'get'
 
   post 'foods/import_fresh_foods' => 'foods#import_fresh_foods'
   post 'foods/delete' => 'foods#delete'
@@ -14,7 +16,7 @@ FoodExpiry::Application.routes.draw do
     end
   end
 #  resources :foods
-  root :to => redirect('/foods')
+ # root :to => redirect('/foods')
 
 
 end
