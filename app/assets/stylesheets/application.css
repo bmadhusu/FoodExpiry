@@ -33,6 +33,7 @@ a {
   text-decoration: underline;
   font-weight: bold;
 }
+/*
 h1 {
   color: maroon;
   font-size: 150%;
@@ -41,6 +42,7 @@ h1 {
   width: 100%;
   border-bottom: 1px solid DarkSlateGrey;
 }
+
 h2.title {
   margin: 0 0 1em;
   padding: 10px;
@@ -50,6 +52,7 @@ h2.title {
   font-size: 2em;
   font-style: normal;
 }
+*/
 table#foods {
   margin: 10px;
   border-collapse: collapse;
@@ -76,12 +79,13 @@ table#foods th, table#foods td {
   font-weight: bold;
   border: 2px solid red;
 }
-
+/*
 div.field_with_errors input {
     border: 1px solid red;
     background-color: yellow;
     font-weight: bold;
 }
+*/
 form label {
   display: block;
   line-height: 25px;
