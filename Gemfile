@@ -58,6 +58,7 @@ end
 
 # To use debugger
 
+gem 'turbolinks', '1.1.1'
 
 gem 'rufus-scheduler', '2.0.24', :require => "rufus/scheduler"
 
